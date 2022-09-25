@@ -19,4 +19,19 @@ public class EmployeeV2Controller {
     public Employee save(@RequestBody Employee employee){
         return employeeService.save(employee);
     }
+
+    @GetMapping
+    public List<Employee> getAllEmployees(){
+        return employeeService.getAllEmployees();
+    }
+
+    @GetMapping("/{empId}")
+    public Employee getEmployeeById(@PathVariable String empId){
+        return employeeService.getEmployeeById(empId);
+    }
+
+    @DeleteMapping("/{empId}")
+    public String deleteEmployeeById(@PathVariable String empId){
+        return employeeService.deleteEmployeeById(empId);
+    }
 }
